@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "watch": "nodemon server.js"
+    "watch": "node --watch server.js",
+    "test:unit": "mocha --ui tdd tests/1_unit-tests.js",
+    "test:smoke": "node test-support/smoke.cjs"
   },
   "dependencies": {
     "body-parser": "^1.20.9",
@@ -13,20 +15,20 @@
     "chai-http": "^4.4.0",
     "cors": "2.8.5",
     "express": "^4.22.3",
-    "mocha": "^9.2.2",
+    "mocha": "^12.0.3",
     "zombie": "6.1.4"
   },
   "license": "MIT",
-  "devDependencies": {
-    "nodemon": "^3.1.7"
-  },
   "overrides": {
     "qs": "6.16.1",
-    "js-yaml": "4.3.2",
-    "nanoid": "3.3.18",
-    "minimatch": "3.1.4",
     "form-data": "2.5.6",
-    "diff": "5.2.2",
-    "serialize-javascript": "6.0.2"
+    "mocha": {
+      "glob": "^14.0.4",
+      "minimatch": "^11.0.5",
+      "serialize-javascript": "^7.0.4"
+    }
+  },
+  "engines": {
+    "node": "^26.0.0"
   }
 }
